@@ -1,0 +1,30 @@
+align=left
+separator=false
+separator_block_width=5
+color=#fefefe
+
+[window]
+markup=pango
+command=echo "<span background='#2b5278'>   $(/home/marcus-s/Private/Scripts/xfcetweaks/windowtitle) </span>"
+interval=1
+
+[ram]
+markup=pango
+command=echo "<span background='#234465'>   $(/home/marcus-s/Private/Scripts/ramcheck) </span>"
+interval=15
+
+[email]
+markup=pango
+command=echo "<span background='#1c3853'>   $(/home/marcus-s/Private/Scripts/mailcheck) </span>"
+interval=60
+
+[updates]
+markup=pango
+command=echo "<span background='#162b3f'>   $(/home/marcus-s/Private/Scripts/updateInfo.sh) </span>"
+interval=60
+
+[time]
+markup=pango
+command=echo "<span background='#17212c'>   $(date '+%a, %e. %b - %R') </span>"
+interval=1
+

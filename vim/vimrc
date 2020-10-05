@@ -1,0 +1,80 @@
+" Some basic settings
+set nocompatible
+set number
+set relativenumber
+set cursorline
+
+" Syntax on
+syntax on
+
+" Colorcolumn
+set colorcolumn=80
+
+" Tabstops
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
+
+" Indenting
+set autoindent
+
+" For Lightline
+set laststatus=2
+
+" Color Highlighting
+" set Vim-specific sequences for RGB colors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" Correct color scheme for GUI or text mode
+if !has('gui_running')
+	set termguicolors
+    set t_Co=256
+	colorscheme purify
+else
+    set t_Co=256
+	" A nice color scheme
+	colorscheme purify
+
+	" GUI font
+	set guifont=Inconsolata\ Regular\ 16
+
+	" No menu and tool bar
+	set guioptions -=m
+	set guioptions -=T
+	set guioptions -=L
+endif
+
+
+if $COLORTERM == 'xterm-256color'
+	set termguicolors
+	set t_Co=256
+	set t_AB=^[[48;5;%dm
+	set t_AF=^[[38;5;%dm
+endif
+
+
+" Setting correct line wrapping
+set wrap linebreak nolist
+let &showbreak = " "
+
+
+" Remaps
+nnoremap <C-e> :Explore<CR>
+nnoremap <C-b> :BufExplorer<CR>
+nnoremap <C-v> :vsp<CR>
+nnoremap <C-x> :bd<CR>
+nnoremap <C-s> :wa<CR>
+nnoremap <C-c> :TagbarToggle<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-m> <CR>
+nnoremap <C-Right> <C-w><Right>
+nnoremap <C-Left> <C-w><Left>
+nnoremap ; :
+
+" Insert remaps
+inoremap <C-s> <Esc>:wa<CR>i<Right>
+
+" Copy/pasting in Visual Mode
+vnoremap <C-c> "+yy
+vnoremap <C-v> "+p

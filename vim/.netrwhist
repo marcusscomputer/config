@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/user/private/developer/lib'
+let g:netrw_dirhist_2='/home/user/private/sources/brightness'
+let g:netrw_dirhist_3='/home/user/.config/ranger'
+let g:netrw_dirhist_4='/home/user/private/developer/lib'
+let g:netrw_dirhist_5='/home/user/private/developer/lib/ui'
+let g:netrw_dirhist_6='/home/user/private/developer/lib'
+let g:netrw_dirhist_7='/home/user/private/developer/lib/ui'
+let g:netrw_dirhist_8='/home/user/private/projects/tests/invoice'
+let g:netrw_dirhist_9='/home/user'
