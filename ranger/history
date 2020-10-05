@@ -1,0 +1,50 @@
+mn
+shell mv 0000-52846.mp4 Eps15Ardour.mp4
+rename EpisodeScript.txt Ep
+rename EpisodeScript.txt
+open_with 0
+r
+shell touch test.txt
+shell touch test
+touch test
+touch testfile
+search fileio
+find fileio
+find s
+find fil
+search sound
+search 
+search soundana
+find
+find sou
+"find "
+find\
+shell ./make.sh<CR>
+shell ./make.sh%enter
+shell ./make.sh<enter>
+shell ./make.sh<C-m>
+shell ./make.sh
+mkdir jackclient
+mkdir darknet
+find d
+
+shell mv .wine wine
+mkdir qt
+mkdir audioinput
+find 
+open_with 
+delete
+mkdir QtPro
+shell mv Famirids..ttf Famirids.ttf
+cd ~/.fonts
+cd .fonts
+shell 
+shell mv 0000-0690.mp4 Intro2019-1.mp4
+cd .vim
+cd .themes
+cd /usr/share/sddm
+mv episode Kodachi
+!mv episode Kodachi
+shell mv episode Kodachi
+shell mkdir episode
+shell mv 2020-09-30\ 20-43-10.mp4 PremiumOfferYoutube.mp4
