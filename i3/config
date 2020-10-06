@@ -1,99 +1,132 @@
-# Modifier Key (Super)
+                           
+#         'lxddddddddddddddddddxl'        
+#        ,x0ocoooooooooooooooocoOx,       
+#       ;kOccOXNNNNNNNNNNNNNNXOccOk;      
+#      :kkclKWMWWWWMMWWMMWWWWWWKlckk:     
+#     cOk:oXWWWMWWWWWWWWMWWWMWWWXo:kOc    
+#    l0x:dXWWWKkkOXWMWWWWXOkkKWWWXd:x0l   
+#  'o0d:xNWMWNo   lXMWWWXl   oNWMWNx:o0o' 
+# ,d0o:kWWWWWNo '',xWWMNx,,' oNWWWWWk:o0d,
+# dKo;kWMWWWWNo :l,:0WWO;;o; oNWWWWWWk;lKd
+# cOx:oXWMMWWNo :kl'o00l'dO: oNWWMWWXo:xOc
+#  :Ok:lKWWMWNo :KO;,:;,cK0: oNMWMWKl:kO: 
+#   ;kOcc0WMMNo :KNd'  ;OW0: oNMWW0ccOk;  
+#    ,xOlcOWMW0xONWXkxk0NWNOk0WWWOclOx,   
+#     'd0o:kNMWMMMWWMWWWWWWMMMWNk:o0d'    
+#      'o0d:xNWMMMWWMWWWWWWMMWNx:d0o'     
+#        lOx:lxxxxxxxxxxxxxxxxl:xOc       
+#         :OOddddddddddddddddddOO:        
+#          ,::::::::::::::::::::,         
+#
+# ------------------------------------------------------------------------------
+#   marcus-s
+#   Linux Youtuber and ethusiastic user of the open source platform
+# ------------------------------------------------------------------------------
+#   i3 config in use as daily driver
+# ------------------------------------------------------------------------------
+#   https://github.com/marcusscomputer/config.git
+# ------------------------------------------------------------------------------
+
+
+
+# ------------------------------------------------------------------------------
+# The modifier key - in my case, it's the windows key
+# ------------------------------------------------------------------------------
 set $mod Mod4
 
+# ------------------------------------------------------------------------------
+# Terminal command
+# ------------------------------------------------------------------------------
+set $term st -A 0.9
+
+# ------------------------------------------------------------------------------
 # No mouse focus
+# ------------------------------------------------------------------------------
 focus_follows_mouse no
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+# ------------------------------------------------------------------------------
+# Font to be used in window titles
+# ------------------------------------------------------------------------------
 font pango:Lato 11
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
-
-# Use Mouse+$mod to drag floating windows to their wanted position
+# ------------------------------------------------------------------------------
+# The modifier for floating windows. Hold this key and drag a window.
+# ------------------------------------------------------------------------------
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec --no-startup-id st -A 0.9
+# ------------------------------------------------------------------------------
+# Start a terminal
+# ------------------------------------------------------------------------------
+bindsym $mod+Return exec --no-startup-id $term
 
-# kill focused window
+# ------------------------------------------------------------------------------
+# Kill focused window
+# ------------------------------------------------------------------------------
 bindsym Ctrl+Delete kill
 
-# start dmenu (a program launcher)
+# ------------------------------------------------------------------------------
+# Rofi run - Win+R, Rofi switch - Win+Tab, Appfinder - Alt+Space, Search - Win+Space
+# ------------------------------------------------------------------------------
 bindsym $mod+r exec --no-startup-id rofi -theme /home/marcus-s/.config/rofi/themes/onedark.rasi -show run
 bindsym Mod1+space exec --no-startup-id xfce4-appfinder
 bindsym $mod+space exec --no-startup-id catfish
 bindsym $mod+Tab exec --no-startup-id rofi -theme /home/marcus-s/.config/rofi/themes/onedark.rasi -show
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-bindsym $mod+shift+r exec --no-startup-id /home/marcus-s/Private/Scripts/dmenu-desktop
 
-# change focus
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
+# ------------------------------------------------------------------------------
+# Shift focus with Win+Arrow:
+# ------------------------------------------------------------------------------
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
+# ------------------------------------------------------------------------------
+# Move window:
+# ------------------------------------------------------------------------------
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
+# ------------------------------------------------------------------------------
+# split in vertical orientation
+# ------------------------------------------------------------------------------
 bindsym Mod1+h split v
 
-# split in vertical orientation
+# ------------------------------------------------------------------------------
+# Split in horizonal orientation
+# ------------------------------------------------------------------------------
 bindsym Mod1+v split h
 
-# enter fullscreen mode for the focused container
+# ------------------------------------------------------------------------------
+# Enter fullscreen mode for the focused container
+# ------------------------------------------------------------------------------
 bindsym Mod1+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
+# ------------------------------------------------------------------------------
+# Change container layout (stacked, tabbed, toggle split)
+# ------------------------------------------------------------------------------
 bindsym $mod+Shift+s layout stacking
 bindsym $mod+Shift+w layout tabbed
-# bindsym $mod+Shift+e layout toggle split
 
-# toggle tiling / floating
+# ------------------------------------------------------------------------------
+# Toggle tiling / floating
+# ------------------------------------------------------------------------------
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym Mod1+a focus parent
-
+# ------------------------------------------------------------------------------
 # Define the workspace names and labels
-set $workspace1 " 1: "
-set $workspace2 " 2: "
-set $workspace3 " 3: "
-set $workspace4 " 4: "
-set $workspace5 " 5: " 
-set $workspace6 " 6: "
+# ------------------------------------------------------------------------------
+set $workspace1 " 1:  "
+set $workspace2 " 2:  "
+set $workspace3 " 3:  "
+set $workspace4 " 4:  "
+set $workspace5 " 5:  " 
+set $workspace6 " 6:  "
 
-# switch to workspace
+# ------------------------------------------------------------------------------
+# Switch to workspace
+# ------------------------------------------------------------------------------
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
@@ -101,11 +134,15 @@ bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace $workspace5
 bindsym $mod+6 workspace $workspace6
 
+# ------------------------------------------------------------------------------
 # Move to next or previous workspace with Ctrl+Alt+Arrow
+# ------------------------------------------------------------------------------
 bindsym Ctrl+Mod1+Left workspace prev
 bindsym Ctrl+Mod1+Right workspace next
 
-# move focused container to workspace
+# ------------------------------------------------------------------------------
+# Move focused container to workspace
+# ------------------------------------------------------------------------------
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
@@ -113,11 +150,14 @@ bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace $workspace5
 bindsym $mod+Shift+6 move container to workspace $workspace6
 
-# reload the configuration file
+# ------------------------------------------------------------------------------
+# Reload the configuration file: Win+Shift+C
+# ------------------------------------------------------------------------------
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-#bindsym $mod+Shift+r restart
-# resize window (you can also use the mouse for that)
+
+# ------------------------------------------------------------------------------
+# Resize mode config
+# ------------------------------------------------------------------------------
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -141,10 +181,14 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+# ------------------------------------------------------------------------------
+# Resize mode: Win+W
+# ------------------------------------------------------------------------------
 bindsym $mod+w mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# ------------------------------------------------------------------------------
+# i3blocks Config
+# ------------------------------------------------------------------------------
 bar {        
         colors {
         background #141a21
@@ -164,9 +208,10 @@ bar {
     	font xft:Roboto Mono Light for Powerline, FontAwesome 10
 }
 
-#Shortcuts
 
-#Autostart
+# ------------------------------------------------------------------------------
+# Autostart
+# ------------------------------------------------------------------------------
 exec_always --no-startup-id setxkbmap -layout "de" -option "grp:ctrl_shift_toggle"
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id pnmixer
@@ -178,25 +223,33 @@ exec_always --no-startup-id xflux -l 52.5166667 -g 13.4
 exec_always --no-startup-id tracker daemon -s
 
 
-# colour of border, background, text, indicator, and child_border
+# ------------------------------------------------------------------------------
+# Colours for border, background, text, indicator, and child_border
+# ------------------------------------------------------------------------------
 client.focused          #272727             #272727            #FFFFFF    #FFFF00
 client.unfocused        #404552             #404552            #AAAAAA    #ffff00
 client.focused_inactive #404552             #404552            #AAAAAA    #ffff00
 client.urgent           #990000             #990000            #FFFF00    #ffff00
 
+# ------------------------------------------------------------------------------
+# SHORTCUTS IN ALPHABETICAL ORDER
+# ------------------------------------------------------------------------------
+
 # Special shortcut: lock screen
 bindsym $mod+l exec /home/marcus-s/Private/Scripts/lockscreen.sh
 
-# Shortcuts -
+# Blender
 bindsym $mod+b exec blender
+
+# Codelite
 bindsym $mod+c exec codelite
 
 # Discord - Default: cordless, Shift: Discord normal GUI
-bindsym $mod+d exec st -A 0.9 -e cordless
+bindsym $mod+d exec $term -e cordless
 bindsym $mod+Shift+d exec discord
 
-# File explorer - Default: ranger, Shift: Thunar
-bindsym $mod+e exec sakura -e ranger
+# Explorer - Default: ranger, Shift: Thunar
+bindsym $mod+e exec $term -e ranger
 bindsym $mod+Shift+e exec thunar
 
 # Qutebrowser on F as replacement for Firefox
@@ -204,14 +257,20 @@ bindsym $mod+f exec /opt/qutebrowser/qutebrowser.py
 # Firefox on Shift-F
 bindsym $mod+Shift+f exec firefox-esr
 
+# Gimp
 bindsym $mod+g exec gimp
 
 # Mail - Deafult: mutt, Shift variant: Thunderbird
-bindsym $mod+m exec st -A 0.9 -e mutt
+bindsym $mod+m exec $term -e neomutt -F /home/marcus-s/.mutt/muttrc
 bindsym $mod+Shift+m exec thunderbird
 
+# Synaptic (should it ever be needed)
 bindsym $mod+s exec synaptic-pkexec
+
+# Text - Mouspad
 bindsym $mod+t exec mousepad
+
+# Virt Manager
 bindsym $mod+v exec virt-manager
 # bindsym $mod+w exec xfce4-terminal -e /home/marcus-s/Private/Scripts/vm_start_win10.sh
 bindsym $mod+y exec obs
@@ -248,3 +307,4 @@ assign [class="libreoffice"] $workspace6
 # CERTAIN WINDOW OPENING MODES 
 # ------------------------------------------------------------------------------
 for_window [class="xfce4-appfinder"] floating enable
+for_window [class="catfuish"] floating enable
