@@ -1,6 +1,6 @@
 align=left
 separator=false
-separator_block_width=5
+separator_block_width=0
 color=#fefefe
 
 [window]
@@ -10,21 +10,21 @@ interval=1
 
 [ram]
 markup=pango
-command=echo "<span background='#234465'>   $(/home/marcus-s/Private/Scripts/ramcheck) </span>"
+command=echo "<span background='#2b785a'>   $(/home/marcus-s/Private/Scripts/ramcheck) </span>"
 interval=15
 
 [email]
 markup=pango
-command=echo "<span background='#1c3853'>   $(/home/marcus-s/Private/Scripts/mailcheck) </span>"
+command=echo "<span background='#4a2b78'>   $(/home/marcus-s/Private/Scripts/mailcheck) </span>"
 interval=60
 
 [updates]
 markup=pango
-command=echo "<span background='#162b3f'>   $(/home/marcus-s/Private/Scripts/updateInfo.sh) </span>"
+command=echo "<span background='#78352b'>   $(/home/marcus-s/Private/Scripts/updateInfo.sh) </span>"
 interval=60
 
 [time]
 markup=pango
-command=echo "<span background='#17212c'>   $(date '+%a, %e. %b - %R') </span>"
+command=echo "<span background='#2b3378'>   $(date '+%a %e.%b <b>%R</b>') </span>"
 interval=1
 
