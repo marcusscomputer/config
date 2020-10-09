@@ -117,12 +117,13 @@ bindsym $mod+Shift+space floating toggle
 # ------------------------------------------------------------------------------
 # Define the workspace names and labels
 # ------------------------------------------------------------------------------
-set $workspace1 " 1:  "
-set $workspace2 " 2:  "
-set $workspace3 " 3:  "
-set $workspace4 " 4:  "
-set $workspace5 " 5:  " 
-set $workspace6 " 6:  "
+set $workspace1 "1:  "
+set $workspace2 "2:  "
+set $workspace3 "3:  "
+set $workspace4 "4:  "
+set $workspace5 "5:  " 
+set $workspace6 "6:  "
+set $workspace7 "7:  "
 
 # ------------------------------------------------------------------------------
 # Switch to workspace
@@ -133,6 +134,7 @@ bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace $workspace5
 bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
 
 # ------------------------------------------------------------------------------
 # Move to next or previous workspace with Ctrl+Alt+Arrow
@@ -200,11 +202,13 @@ bar {
         active_workspace	#2b5278	#2b5278	#dedede
         inactive_workspace	#141a21	#141a21	#dddddd
         urgent_workspace	#943600	#943600	#fefefe
-     }
+     	}
         status_command i3blocks -c ~/.config/i3blocks/config
-        # status_command i3status
-	position bottom
-	tray_output HDMI-2
+        strip_workspace_numbers yes
+		separator_symbol " | "
+		# status_command i3status
+		position bottom
+		tray_output HDMI-2
     	font xft:Roboto Mono Light for Powerline, FontAwesome 10
 }
 
@@ -260,9 +264,12 @@ bindsym $mod+Shift+f exec firefox-esr
 # Gimp
 bindsym $mod+g exec gimp
 
-# Mail - Deafult: mutt, Shift variant: Thunderbird
+# Mail - Default: mutt, Shift variant: Thunderbird
 bindsym $mod+m exec $term -e neomutt -F /home/marcus-s/.mutt/muttrc
 bindsym $mod+Shift+m exec thunderbird
+
+# (Music) Production: Reaper
+bindsym $mod+p exec reaper
 
 # Synaptic (should it ever be needed)
 bindsym $mod+s exec synaptic-pkexec
@@ -302,6 +309,8 @@ assign [class="geary"] $workspace1
 assign [class="discord"] $workspace1
 assign [class="obs"] $workspace5
 assign [class="libreoffice"] $workspace6
+assign [class="REAPER"] $workspace7
+assign [class="ardour"] $workspace7
 
 # ------------------------------------------------------------------------------
 # CERTAIN WINDOW OPENING MODES 
